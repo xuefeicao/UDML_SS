@@ -133,3 +133,54 @@ transform used: Compose(
     ToTensor()
     Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
 )
+Extract Features: [74/74]	Time 0.013 (0.013)	Data 50.064 (50.064)	
+torch.Size([5864, 512]) <class 'torch.Tensor'>
+finish cluster
+label 0 100
+0.20231513093423756 (100, 512)
+width: 	 227
+bgr init
+train_1.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4addc4208>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4addc4208>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff5253fcd68>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff5253fcd68>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [75/75]	Time 0.007 (0.007)	Data 52.904 (52.904)	
+tensor(2281.9717) test
+100 num_clusters
+K-means done
+[0.46674544 0.59469953 0.71033086 0.81634031 0.89618501 0.94902093] 0.5452069870079053
+Epoch-0 0.4667  0.5947  0.7103  0.8163  0.8962  0.9490  0.5452
+######################################## 
+ BatchNorm frozen
+Epoch: [006][6/6]	Time 2.706	Loss 1.0328 	Loss_rot 1.3787 	Loss_rot_test 0.0000 	accuracy 0.0021 	Pos 0.5118	Neg 0.3565 	
+Epoch: [007][6/6]	Time 2.195	Loss 1.0273 	Loss_rot 1.3713 	Loss_rot_test 0.0000 	accuracy 0.0021 	Pos 0.5184	Neg 0.3814 	
