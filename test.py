@@ -7,53 +7,11 @@ from utils.serialization import load_checkpoint
 import torch 
 import ast
 import numpy as np
-def knn_clas(sim_mat, gallery_labels, query_labels, k=200, sigma=0.1, args=None):
-    sim_mat = sim_mat.numpy()
-    gallery_labels = [gallery_labels[i].item() for i in range(len(gallery_labels))]
-    query_labels = [query_labels[i].item() for i in range(len(query_labels))]
-    if hasattr(args, "save_txt"):
-        save_npy = args.save_txt.replace(".txt", "-") + str(epoch) + "_sim.npy"
-        np.save(save_npy, sim_mat)
-
-    ans = []
-    for i in range(len(query_labels)):
-        yi = np.argsort(sim_mat[i,:])[-k:]
-        
-        dic = {}
-        for ind in yi:
-            if gallery_labels[ind] not in dic:
-                dic[gallery_labels[ind]] = 0
-            dic[gallery_labels[ind]] += np.exp(sim_mat[i, ind]/sigma)
-        
-        allkeys = list(dic.keys())
-        prelabel = sorted(allkeys, key=lambda x: -dic[x])[0]
-        if i == 0:
-            print(dic, prelabel, k, sigma)
-        ans.append(prelabel)
-    return np.mean([query_labels[i]==ans[i] for i in range(len(query_labels))])
-        
-
-
-
-
 
 
 
 def extract_recalls(data, data_root, width, net, checkpoint, dim, batch_size, nThreads, pool_feature, gallery_eq_query, model=None, epoch=0, org_feature=False, save_txt="", args=None):
-    return_early = False
-    if save_txt != "":
-        with open(save_txt) as f:
-            allfile = f.read()
-        with open(save_txt) as f:
-            results = f.readlines()
-            results = [result for result in results if "Epoch-" in result]
-        if len(results) > 0:
-            tmp = [int(result.split()[0][6:]) for result in results]
-            old_epoch = max(tmp)
-            print(old_epoch, epoch, "ep")
-            if (old_epoch >= epoch):
-                return_early = True
-                return
+    
 
     gallery_feature, gallery_labels, query_feature, query_labels = \
         Model2Feature(data=data, root=data_root, width=width, net=net, checkpoint=checkpoint,
@@ -62,25 +20,14 @@ def extract_recalls(data, data_root, width, net, checkpoint, dim, batch_size, nT
     sim_mat = pairwise_similarity(query_feature, gallery_feature)
     if gallery_eq_query is True:
         sim_mat = sim_mat - torch.eye(sim_mat.size(0))
-    else:
-        ans = []
-        for k in [10, 100]:
-            for sigma in [0.01, 0.1, 1]:
-                ans.append(knn_clas(sim_mat, gallery_labels, query_labels, k, sigma, args))
-        result = " ".join([str(x) for x in ans])
-        print('Epoch-%d' % epoch, result)
-        return 
+    
     print(torch.sum(gallery_feature), "test")
 
     recall_ks = Recall_at_ks(sim_mat, query_ids=query_labels, gallery_ids=gallery_labels, data=data, args=args, epoch=epoch)
-    if return_early:
-        print("**")
-        return
+
     labels = [x.item() for x in gallery_labels]
-    if (args.data == "product"):
-        nmi = 0
-    else:
-        nmi = NMI(gallery_feature, gallery_labels, n_cluster=len(set(labels)))
+
+    nmi = NMI(gallery_feature, gallery_labels, n_cluster=len(set(labels)))
     print(recall_ks, nmi)
     result = '  '.join(['%.4f' % k for k in (recall_ks.tolist() + [nmi])])
 
@@ -110,10 +57,8 @@ if __name__ == "__main__":
                         help='if True extract feature from the last pool layer')
     
     args = parser.parse_args()
-    if "rot_only" in args.save_txt or (args.dim % 64 != 0):
-        org_feature = True
-    else:
-        org_feature = False
+
+    org_feature = False
     print(args, org_feature)
     checkpoint = load_checkpoint(args.resume)
     epoch = checkpoint['epoch']
