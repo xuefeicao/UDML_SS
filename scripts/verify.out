@@ -58,3 +58,78 @@ transform used: Compose(
 )
 /users/xcao1/anaconda/my_env_1.2/lib/python3.6/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
   from ._conv import register_converters as _register_converters
+Extract Features: [59/59]	Time 0.021 (0.021)	Data 51.338 (51.338)	
+torch.Size([5864, 1024]) <class 'torch.Tensor'>
+finish cluster
+label 0 100
+0.1612291255850956 (100, 1024)
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ade76208>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ade76208>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [60/60]	Time 0.019 (0.019)	Data 57.927 (57.927)	
+feature normalized
+tensor(92839.5469) test
+100 num_clusters
+K-means done
+[0.47045915 0.59908845 0.72451047 0.82714382 0.90074274 0.95087779] 0.5532238052960019
+Epoch-0 0.4705  0.5991  0.7245  0.8271  0.9007  0.9509  0.5532
+######################################## 
+ BatchNorm frozen
+{140688983087072, 140688983087144, 140688983087216, 140688983087288}
+initial model is save at /gpfs/data/xl6/xuefei/ML/results/Deep_Metric/ckpt/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.000005-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2
+width: 	 227
+bgr init
+train_1.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ae1d19b0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ae1d19b0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Epoch: [001][6/6]	Time 2.998	Loss 1.0537 	Loss_rot 1.4082 	Loss_rot_test 0.0000 	accuracy 0.0062 	Pos 0.5206	Neg 0.4138 	
+Epoch: [002][6/6]	Time 2.249	Loss 1.0451 	Loss_rot 1.3667 	Loss_rot_test 0.0000 	accuracy 0.0083 	Pos 0.5149	Neg 0.3959 	
+Epoch: [003][6/6]	Time 1.801	Loss 1.0489 	Loss_rot 1.4063 	Loss_rot_test 0.0000 	accuracy 0.0000 	Pos 0.5756	Neg 0.3804 	
+Epoch: [004][6/6]	Time 1.879	Loss 1.0400 	Loss_rot 1.3939 	Loss_rot_test 0.0000 	accuracy 0.0021 	Pos 0.5804	Neg 0.3665 	
+Epoch: [005][6/6]	Time 2.046	Loss 1.0307 	Loss_rot 1.3664 	Loss_rot_test 0.0000 	accuracy 0.0000 	Pos 0.5591	Neg 0.3757 	
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4b601a198>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4b601a198>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
