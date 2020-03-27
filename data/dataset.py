@@ -84,6 +84,7 @@ class MyData(data.Dataset):
         print('transform used:', transform)
         
         if label_txt is None:
+            raise Exception('wrong data used!')
             label_txt = os.path.join(root, 'train.txt')
 
         if transform is None:
@@ -159,11 +160,8 @@ class Dataset:
 
         train_txt = os.path.join(root, train_txt)
         test_txt = os.path.join(root, 'test.txt')
-        if mode == "test":
-            print("test mode+++++++++++++++++++++++++++")
-            self.train = MyData(root, label_txt=train_txt, transform=transform_Dict['center-crop'], mode=mode, self_supervision_rot=self_supervision_rot, rot_bt=rot_bt, corruption=corruption)
-        else:
-            self.train = MyData(root, label_txt=train_txt, transform=transform_Dict['rand-crop'], mode=mode, self_supervision_rot=self_supervision_rot, rot_bt=rot_bt, corruption=corruption)
+       
+        self.train = MyData(root, label_txt=train_txt, transform=transform_Dict['rand-crop'], mode=mode, self_supervision_rot=self_supervision_rot, rot_bt=rot_bt, corruption=corruption)
         
         self.gallery = MyData(root, label_txt=test_txt, transform=transform_Dict['center-crop'], mode=mode, self_supervision_rot=self_supervision_rot, rot_bt=rot_bt)
 

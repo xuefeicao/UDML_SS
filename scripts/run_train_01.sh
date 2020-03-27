@@ -18,7 +18,7 @@ pretrained=${13}
 save_step=50
 Epoch=600
 Model_LIST=`seq  50 50 600`
-DATA_ROOT=../data
+DATA_ROOT=../Dataset
 Gallery_eq_Query=True
 R=.pth.tar
 LR=0.00001
@@ -59,40 +59,19 @@ fi
 
 
 
-if [ "$DATA" = shop ]
-then
-  echo "gallery is not equal to query"
-  Gallery_eq_Query=False
-  save_step=10
-  Epoch=400
-  Model_LIST=`seq  10 10 400`
-fi
 
 
 
 
 
 
-target=results_random_crop_cluster/Deep_Metric
-if [ "$rot" = 0 ]
-then
-  echo "change target"
-  target=results_random_crop_cluster/reproduce
-elif [ "$rot_only" = 1 ]
-then
-    echo "change target"
-    target=rot_only
-fi
-if [ "$NET" != Inception ]
-then
-    echo "change target"
-    target=results_random_crop_cluster/backbone
-fi
+target=results/Deep_Metric
 
 
 
 
-root=/checkpoint/xuefeicao01/metric_learning/${target}
+
+root=/gpfs/data/xl6/xuefei/${target}
 CHECKPOINTS=${root}/ckpt
 
 
@@ -132,16 +111,8 @@ width=227
 
 
 num_instances=5
-if [ "$DATA" = cifar ]
-    then 
-      num_instances=50
-    fi
 
 
-
-
-# if [ ! -n "$1" ] ;then
-# echo $width
 echo "Begin Training!"
 stdbuf -oL python ../train.py --net ${NET} \
 --data $DATA \

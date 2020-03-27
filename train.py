@@ -51,7 +51,7 @@ def main(args):
 
     model = models.create(args.net, pretrained=args.pretrained, dim=args.dim, self_supervision_rot=args.self_supervision_rot)
     all_pretrained = glob.glob(save_dir + "/*.pth.tar")
-    # for vgg and densenet
+
     if (args.resume is None) or (len(all_pretrained) == 0):
         model_dict = model.state_dict()
 
@@ -144,24 +144,17 @@ def main(args):
     else:
         criterion = losses.create(args.loss, margin=args.margin, alpha=args.alpha, base=args.loss_base).cuda()
 
-    # Decor_loss = losses.create('decor').cuda()
+
     data = DataSet.create(args.data, ratio=args.ratio, width=args.width, origin_width=args.origin_width, root=args.save_dir, self_supervision_rot=args.self_supervision_rot, rot_bt=args.rot_bt, corruption=1, args=args)
     train_loader = torch.utils.data.DataLoader(
         data.train, batch_size=args.batch_size,
         sampler=FastRandomIdentitySampler(data.train, num_instances=args.num_instances),
         drop_last=True, pin_memory=True, num_workers=args.nThreads)
-    if args.use_test:
-        args.use_test = torch.utils.data.DataLoader(
-            data.test, batch_size=args.batch_size,
-            sampler=FastRandomIdentitySampler(data.test, num_instances=args.num_instances),
-            drop_last=True, pin_memory=True, num_workers=args.nThreads)
+    
 
     # save the train information
 
     for epoch in range(start, args.epochs):
-
-        if (epoch == 2 or (start > 2)) and args.pretrained:
-            optimizer.param_groups[0]['lr_mul'] = 0.1
 
         train(epoch=epoch, model=model, criterion=criterion,
               optimizer=optimizer, train_loader=train_loader, args=args)
@@ -219,9 +212,9 @@ if __name__ == '__main__':
     parser.add_argument('--lr', type=float, default=1e-5, help="learning rate of new parameters")
     parser.add_argument('--rot_lr', type=float, default=1e-5, help="learning rate of new rot parameters")
     parser.add_argument('--batch_size', '-b', default=128, type=int, metavar='N',
-                        help='mini-batch size (1 = pure stochastic) Default: 256')
+                        help='mini-batch size of metric learning loss')
     parser.add_argument('--rot_batch', default=16, type=int, metavar='N',
-                        help='mini-batch size (1 = pure stochastic)')
+                        help='mini-batch size of rot loss')
     parser.add_argument('--num_instances', default=8, type=int, metavar='n',
                         help=' number of samples from one class in mini-batch')
     parser.add_argument('--dim', default=512, type=int, metavar='n',
@@ -253,7 +246,7 @@ if __name__ == '__main__':
     parser.add_argument('--data_root', type=str, default=None,
                         help='path to Data Set')
 
-    parser.add_argument('--net', default='VGG16-BN')
+    parser.add_argument('--net', default='Inception')
     parser.add_argument('--loss', default='branch', required=True,
                         help='loss for training network')
     parser.add_argument('--epochs', default=600, type=int, metavar='N',
@@ -291,15 +284,14 @@ if __name__ == '__main__':
     parser.add_argument('--use_test', default=0, type=float, 
                         help='whether to use test data in self supervision')
 
-    #label corruption
+    #label corruption, not used for now
     parser.add_argument('--corruption', default=0, type=float,
                         help='label corruption percentage')
 
 
 
     # basic parameter
-    # parser.add_argument('--checkpoints', default='/opt/intern/users/xunwang',
-    #                     help='where the trained models save')
+  
     parser.add_argument('--save_dir', default=None,
                         help='where the trained models save')
     parser.add_argument('--nThreads', '-j', default=16, type=int, metavar='N',
