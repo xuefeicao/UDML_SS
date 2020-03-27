@@ -1916,3 +1916,795 @@ Epoch: [126][6/6]	Time 1.362	Loss 0.9275 	Loss_rot 0.6735 	Loss_rot_test 0.0000 
 Epoch: [127][6/6]	Time 1.346	Loss 0.8805 	Loss_rot 0.6955 	Loss_rot_test 0.0000 	accuracy 0.0375 	Pos 0.5673	Neg 0.3394 	
 Epoch: [128][6/6]	Time 1.325	Loss 0.8972 	Loss_rot 0.5882 	Loss_rot_test 0.0000 	accuracy 0.0083 	Pos 0.5685	Neg 0.3608 	
 Epoch: [129][6/6]	Time 1.478	Loss 0.8990 	Loss_rot 0.7645 	Loss_rot_test 0.0000 	accuracy 0.0062 	Pos 0.5442	Neg 0.3665 	
+Epoch: [130][6/6]	Time 1.302	Loss 0.9065 	Loss_rot 0.6751 	Loss_rot_test 0.0000 	accuracy 0.0208 	Pos 0.5613	Neg 0.3406 	
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4b601a390>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4b601a390>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [74/74]	Time 0.013 (0.013)	Data 21.150 (21.150)	
+torch.Size([5864, 512]) <class 'torch.Tensor'>
+finish cluster
+label 0 100
+0.2967111604658347 (100, 512)
+width: 	 227
+bgr init
+train_1.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ac215198>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ac215198>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ac215c88>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ac215c88>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [75/75]	Time 0.005 (0.005)	Data 22.832 (22.832)	
+tensor(4630.1387) test
+100 num_clusters
+K-means done
+[0.49881837 0.61850101 0.73784605 0.83625928 0.90378123 0.95543552] 0.580115738470605
+Epoch-0 0.4988  0.6185  0.7378  0.8363  0.9038  0.9554  0.5801
+######################################## 
+ BatchNorm frozen
+Epoch: [131][6/6]	Time 1.389	Loss 0.8764 	Loss_rot 0.6232 	Loss_rot_test 0.0000 	accuracy 0.0125 	Pos 0.5697	Neg 0.3535 	
+Epoch: [132][6/6]	Time 1.397	Loss 0.8916 	Loss_rot 0.6644 	Loss_rot_test 0.0000 	accuracy 0.0104 	Pos 0.5802	Neg 0.3366 	
+Epoch: [133][6/6]	Time 1.249	Loss 0.8884 	Loss_rot 0.6129 	Loss_rot_test 0.0000 	accuracy 0.0146 	Pos 0.5260	Neg 0.3536 	
+Epoch: [134][6/6]	Time 1.268	Loss 0.8991 	Loss_rot 0.7439 	Loss_rot_test 0.0000 	accuracy 0.0021 	Pos 0.5113	Neg 0.3426 	
+Epoch: [135][6/6]	Time 1.617	Loss 0.8988 	Loss_rot 0.6007 	Loss_rot_test 0.0000 	accuracy 0.0083 	Pos 0.5432	Neg 0.3257 	
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4b601a320>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4b601a320>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [74/74]	Time 0.012 (0.012)	Data 21.278 (21.278)	
+torch.Size([5864, 512]) <class 'torch.Tensor'>
+finish cluster
+label 0 100
+0.3018127718604023 (100, 512)
+width: 	 227
+bgr init
+train_1.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff5253fccf8>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff5253fccf8>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4adf94f60>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4adf94f60>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [75/75]	Time 0.005 (0.005)	Data 29.157 (29.157)	
+tensor(4598.5166) test
+100 num_clusters
+K-means done
+[0.49797434 0.61833221 0.73683322 0.83372721 0.90546928 0.95543552] 0.5783755059512039
+Epoch-0 0.4980  0.6183  0.7368  0.8337  0.9055  0.9554  0.5784
+######################################## 
+ BatchNorm frozen
+Epoch: [136][6/6]	Time 1.455	Loss 0.8869 	Loss_rot 0.5058 	Loss_rot_test 0.0000 	accuracy 0.0229 	Pos 0.5809	Neg 0.3295 	
+Epoch: [137][6/6]	Time 1.284	Loss 0.8667 	Loss_rot 0.7597 	Loss_rot_test 0.0000 	accuracy 0.0312 	Pos 0.5158	Neg 0.3385 	
+Epoch: [138][6/6]	Time 1.296	Loss 0.8984 	Loss_rot 0.6236 	Loss_rot_test 0.0000 	accuracy 0.0083 	Pos 0.5116	Neg 0.3459 	
+Epoch: [139][6/6]	Time 1.348	Loss 0.8863 	Loss_rot 0.5016 	Loss_rot_test 0.0000 	accuracy 0.0208 	Pos 0.6057	Neg 0.3492 	
+Epoch: [140][6/6]	Time 1.557	Loss 0.8720 	Loss_rot 0.6518 	Loss_rot_test 0.0000 	accuracy 0.0271 	Pos 0.5467	Neg 0.3480 	
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4cc2cb8d0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4cc2cb8d0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [74/74]	Time 0.012 (0.012)	Data 14.704 (14.704)	
+torch.Size([5864, 512]) <class 'torch.Tensor'>
+finish cluster
+label 0 100
+0.31027546700982017 (100, 512)
+width: 	 227
+bgr init
+train_1.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ae1d89e8>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ae1d89e8>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff5253fccf8>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff5253fccf8>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [75/75]	Time 0.005 (0.005)	Data 21.513 (21.513)	
+tensor(4566.3545) test
+100 num_clusters
+K-means done
+[0.50472654 0.62356516 0.743079   0.8367657  0.90698852 0.95729237] 0.5852017971789231
+Epoch-0 0.5047  0.6236  0.7431  0.8368  0.9070  0.9573  0.5852
+######################################## 
+ BatchNorm frozen
+Epoch: [141][6/6]	Time 1.482	Loss 0.8435 	Loss_rot 0.7004 	Loss_rot_test 0.0000 	accuracy 0.0542 	Pos 0.5738	Neg 0.3430 	
+Epoch: [142][6/6]	Time 1.116	Loss 0.8758 	Loss_rot 0.5779 	Loss_rot_test 0.0000 	accuracy 0.0271 	Pos 0.5130	Neg 0.3434 	
+Epoch: [143][6/6]	Time 1.086	Loss 0.8802 	Loss_rot 0.5638 	Loss_rot_test 0.0000 	accuracy 0.0271 	Pos 0.5551	Neg 0.3393 	
+Epoch: [144][6/6]	Time 1.049	Loss 0.8731 	Loss_rot 0.5129 	Loss_rot_test 0.0000 	accuracy 0.0188 	Pos 0.6065	Neg 0.3209 	
+Epoch: [145][6/6]	Time 1.125	Loss 0.8828 	Loss_rot 0.6582 	Loss_rot_test 0.0000 	accuracy 0.0167 	Pos 0.4898	Neg 0.3563 	
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ae1e87f0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ae1e87f0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [74/74]	Time 0.011 (0.011)	Data 13.894 (13.894)	
+torch.Size([5864, 512]) <class 'torch.Tensor'>
+finish cluster
+label 0 100
+0.3078605394584567 (100, 512)
+width: 	 227
+bgr init
+train_1.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ade762b0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ade762b0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ade76940>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ade76940>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [75/75]	Time 0.005 (0.005)	Data 27.620 (27.620)	
+tensor(4557.4482) test
+100 num_clusters
+K-means done
+[0.50371371 0.62339635 0.74037812 0.83609048 0.90850777 0.95661715] 0.5863139827462632
+Epoch-0 0.5037  0.6234  0.7404  0.8361  0.9085  0.9566  0.5863
+######################################## 
+ BatchNorm frozen
+Epoch: [146][6/6]	Time 1.570	Loss 0.8602 	Loss_rot 0.5045 	Loss_rot_test 0.0000 	accuracy 0.0417 	Pos 0.5757	Neg 0.3341 	
+Epoch: [147][6/6]	Time 1.386	Loss 0.8669 	Loss_rot 0.6876 	Loss_rot_test 0.0000 	accuracy 0.0396 	Pos 0.5454	Neg 0.3419 	
+Epoch: [148][6/6]	Time 1.445	Loss 0.8788 	Loss_rot 0.8073 	Loss_rot_test 0.0000 	accuracy 0.0250 	Pos 0.5401	Neg 0.3358 	
+Epoch: [149][6/6]	Time 1.298	Loss 0.8711 	Loss_rot 0.8158 	Loss_rot_test 0.0000 	accuracy 0.0354 	Pos 0.5265	Neg 0.3515 	
+Epoch: [150][6/6]	Time 1.295	Loss 0.8833 	Loss_rot 0.6284 	Loss_rot_test 0.0000 	accuracy 0.0187 	Pos 0.4993	Neg 0.3584 	
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ae202128>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ae202128>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [74/74]	Time 0.013 (0.013)	Data 19.987 (19.987)	
+torch.Size([5864, 512]) <class 'torch.Tensor'>
+finish cluster
+label 0 100
+0.31483946095465 (100, 512)
+width: 	 227
+bgr init
+train_1.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4b601a2b0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4b601a2b0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ae1e8c88>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ae1e8c88>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [75/75]	Time 0.005 (0.005)	Data 21.645 (21.645)	
+tensor(4768.4106) test
+100 num_clusters
+K-means done
+[0.50236327 0.62187711 0.74088454 0.83828494 0.90833896 0.95695476] 0.5886378444024384
+Epoch-0 0.5024  0.6219  0.7409  0.8383  0.9083  0.9570  0.5886
+######################################## 
+ BatchNorm frozen
+Epoch: [151][6/6]	Time 1.297	Loss 0.8717 	Loss_rot 0.9628 	Loss_rot_test 0.0000 	accuracy 0.0271 	Pos 0.5196	Neg 0.3665 	
+Epoch: [152][6/6]	Time 1.567	Loss 0.8564 	Loss_rot 0.5805 	Loss_rot_test 0.0000 	accuracy 0.0437 	Pos 0.5637	Neg 0.3586 	
+Epoch: [153][6/6]	Time 1.249	Loss 0.8689 	Loss_rot 0.5440 	Loss_rot_test 0.0000 	accuracy 0.0250 	Pos 0.5729	Neg 0.3457 	
+Epoch: [154][6/6]	Time 1.282	Loss 0.8931 	Loss_rot 0.6740 	Loss_rot_test 0.0000 	accuracy 0.0104 	Pos 0.5318	Neg 0.3419 	
+Epoch: [155][6/6]	Time 1.212	Loss 0.8697 	Loss_rot 0.6786 	Loss_rot_test 0.0000 	accuracy 0.0229 	Pos 0.5089	Neg 0.3523 	
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4b601a0f0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4b601a0f0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [74/74]	Time 0.013 (0.013)	Data 21.264 (21.264)	
+torch.Size([5864, 512]) <class 'torch.Tensor'>
+finish cluster
+label 0 100
+0.30815028670042527 (100, 512)
+width: 	 227
+bgr init
+train_1.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4b4da7e10>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4b4da7e10>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4b601a2b0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4b601a2b0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [75/75]	Time 0.005 (0.005)	Data 26.621 (26.621)	
+tensor(4780.0605) test
+100 num_clusters
+K-means done
+[0.50320729 0.62322755 0.73987171 0.83777853 0.90935179 0.95661715] 0.5913102181100964
+Epoch-0 0.5032  0.6232  0.7399  0.8378  0.9094  0.9566  0.5913
+######################################## 
+ BatchNorm frozen
+Epoch: [156][6/6]	Time 1.300	Loss 0.8620 	Loss_rot 0.6528 	Loss_rot_test 0.0000 	accuracy 0.0208 	Pos 0.5450	Neg 0.3291 	
+Epoch: [157][6/6]	Time 1.190	Loss 0.8858 	Loss_rot 0.8324 	Loss_rot_test 0.0000 	accuracy 0.0146 	Pos 0.5629	Neg 0.3406 	
+Epoch: [158][6/6]	Time 1.077	Loss 0.8352 	Loss_rot 0.6706 	Loss_rot_test 0.0000 	accuracy 0.0521 	Pos 0.5476	Neg 0.3490 	
+Epoch: [159][6/6]	Time 1.285	Loss 0.8647 	Loss_rot 0.7965 	Loss_rot_test 0.0000 	accuracy 0.0312 	Pos 0.5110	Neg 0.3350 	
+Epoch: [160][6/6]	Time 1.086	Loss 0.8599 	Loss_rot 0.7674 	Loss_rot_test 0.0000 	accuracy 0.0312 	Pos 0.6108	Neg 0.3449 	
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4b601a240>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4b601a240>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [74/74]	Time 0.013 (0.013)	Data 13.555 (13.555)	
+torch.Size([5864, 512]) <class 'torch.Tensor'>
+finish cluster
+label 0 100
+0.32319900363354426 (100, 512)
+width: 	 227
+bgr init
+train_1.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ae1d84a8>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ae1d84a8>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4addb7748>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4addb7748>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [75/75]	Time 0.005 (0.005)	Data 17.982 (17.982)	
+tensor(4923.6299) test
+100 num_clusters
+K-means done
+[0.50270088 0.62575962 0.73919649 0.83997299 0.90800135 0.958474  ] 0.589606460184857
+Epoch-0 0.5027  0.6258  0.7392  0.8400  0.9080  0.9585  0.5896
+######################################## 
+ BatchNorm frozen
+Epoch: [161][6/6]	Time 1.090	Loss 0.8536 	Loss_rot 0.5639 	Loss_rot_test 0.0000 	accuracy 0.0271 	Pos 0.5789	Neg 0.3336 	
+Epoch: [162][6/6]	Time 1.067	Loss 0.8560 	Loss_rot 0.6312 	Loss_rot_test 0.0000 	accuracy 0.0312 	Pos 0.5478	Neg 0.3308 	
+Epoch: [163][6/6]	Time 1.048	Loss 0.9053 	Loss_rot 0.6932 	Loss_rot_test 0.0000 	accuracy 0.0021 	Pos 0.5464	Neg 0.3540 	
+Epoch: [164][6/6]	Time 1.156	Loss 0.8633 	Loss_rot 0.7012 	Loss_rot_test 0.0000 	accuracy 0.0354 	Pos 0.5484	Neg 0.3511 	
+Epoch: [165][6/6]	Time 1.318	Loss 0.8732 	Loss_rot 0.6166 	Loss_rot_test 0.0000 	accuracy 0.0271 	Pos 0.4989	Neg 0.3228 	
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ade76198>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ade76198>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [74/74]	Time 0.013 (0.013)	Data 19.902 (19.902)	
+torch.Size([5864, 512]) <class 'torch.Tensor'>
+finish cluster
+label 0 100
+0.30677911433308275 (100, 512)
+width: 	 227
+bgr init
+train_1.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4cedf1be0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4cedf1be0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4adf94400>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4adf94400>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [75/75]	Time 0.005 (0.005)	Data 20.456 (20.456)	
+tensor(4700.7563) test
+100 num_clusters
+K-means done
+[0.50202566 0.62440918 0.73430115 0.83220797 0.90563808 0.95695476] 0.5888870718541798
+Epoch-0 0.5020  0.6244  0.7343  0.8322  0.9056  0.9570  0.5889
+######################################## 
+ BatchNorm frozen
+Epoch: [166][6/6]	Time 1.302	Loss 0.8549 	Loss_rot 0.6168 	Loss_rot_test 0.0000 	accuracy 0.0312 	Pos 0.5734	Neg 0.3405 	
+Epoch: [167][6/6]	Time 1.328	Loss 0.8564 	Loss_rot 0.9514 	Loss_rot_test 0.0000 	accuracy 0.0271 	Pos 0.6209	Neg 0.3207 	
+Epoch: [168][6/6]	Time 1.307	Loss 0.8712 	Loss_rot 0.7355 	Loss_rot_test 0.0000 	accuracy 0.0271 	Pos 0.6189	Neg 0.3271 	
+Epoch: [169][6/6]	Time 1.253	Loss 0.8700 	Loss_rot 0.6080 	Loss_rot_test 0.0000 	accuracy 0.0271 	Pos 0.5540	Neg 0.3254 	
+Epoch: [170][6/6]	Time 1.332	Loss 0.8637 	Loss_rot 0.7669 	Loss_rot_test 0.0000 	accuracy 0.0292 	Pos 0.5367	Neg 0.3383 	
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ac1a70f0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ac1a70f0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [74/74]	Time 0.012 (0.012)	Data 22.151 (22.151)	
+torch.Size([5864, 512]) <class 'torch.Tensor'>
+finish cluster
+label 0 100
+0.3255073685168275 (100, 512)
+width: 	 227
+bgr init
+train_1.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ac1a7860>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ac1a7860>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ac1a7da0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ac1a7da0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [75/75]	Time 0.005 (0.005)	Data 21.390 (21.390)	
+tensor(4641.2075) test
+100 num_clusters
+K-means done
+[0.50185685 0.62322755 0.73311951 0.83474004 0.90563808 0.95695476] 0.5865292176560762
+Epoch-0 0.5019  0.6232  0.7331  0.8347  0.9056  0.9570  0.5865
+######################################## 
+ BatchNorm frozen
+Epoch: [171][6/6]	Time 1.567	Loss 0.8640 	Loss_rot 0.6383 	Loss_rot_test 0.0000 	accuracy 0.0104 	Pos 0.5154	Neg 0.3469 	
+Epoch: [172][6/6]	Time 1.275	Loss 0.8565 	Loss_rot 0.6434 	Loss_rot_test 0.0000 	accuracy 0.0312 	Pos 0.5924	Neg 0.3237 	
+Epoch: [173][6/6]	Time 1.263	Loss 0.8688 	Loss_rot 0.8554 	Loss_rot_test 0.0000 	accuracy 0.0271 	Pos 0.4871	Neg 0.3351 	
+Epoch: [174][6/6]	Time 1.378	Loss 0.8429 	Loss_rot 0.8102 	Loss_rot_test 0.0000 	accuracy 0.0333 	Pos 0.5486	Neg 0.3302 	
+Epoch: [175][6/6]	Time 1.486	Loss 0.8748 	Loss_rot 0.6247 	Loss_rot_test 0.0000 	accuracy 0.0167 	Pos 0.6227	Neg 0.3149 	
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4b4da7c88>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4b4da7c88>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [74/74]	Time 0.015 (0.015)	Data 28.836 (28.836)	
+torch.Size([5864, 512]) <class 'torch.Tensor'>
+finish cluster
+label 0 100
+0.32007767006034227 (100, 512)
+width: 	 227
+bgr init
+train_1.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ae1d1828>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ae1d1828>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ae1e8eb8>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4ae1e8eb8>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [75/75]	Time 0.005 (0.005)	Data 13.829 (13.829)	
+tensor(4603.4438) test
+100 num_clusters
+K-means done
+[0.50405132 0.62255233 0.73835246 0.83609048 0.90732613 0.95307225] 0.5841806541475693
+Epoch-0 0.5041  0.6226  0.7384  0.8361  0.9073  0.9531  0.5842
+######################################## 
+ BatchNorm frozen
+Epoch: [176][6/6]	Time 1.124	Loss 0.8612 	Loss_rot 0.8025 	Loss_rot_test 0.0000 	accuracy 0.0271 	Pos 0.5147	Neg 0.3330 	
+Epoch: [177][6/6]	Time 1.114	Loss 0.8444 	Loss_rot 0.5687 	Loss_rot_test 0.0000 	accuracy 0.0271 	Pos 0.5493	Neg 0.3221 	
+Epoch: [178][6/6]	Time 1.090	Loss 0.8603 	Loss_rot 0.5973 	Loss_rot_test 0.0000 	accuracy 0.0208 	Pos 0.5673	Neg 0.3215 	
+Epoch: [179][6/6]	Time 1.149	Loss 0.8360 	Loss_rot 0.6978 	Loss_rot_test 0.0000 	accuracy 0.0563 	Pos 0.5087	Neg 0.3240 	
+Epoch: [180][6/6]	Time 1.091	Loss 0.8449 	Loss_rot 0.5687 	Loss_rot_test 0.0000 	accuracy 0.0417 	Pos 0.5129	Neg 0.3540 	
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4b4da7e10>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4b4da7e10>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [74/74]	Time 0.012 (0.012)	Data 13.141 (13.141)	
+torch.Size([5864, 512]) <class 'torch.Tensor'>
+finish cluster
+label 0 100
+0.31936822658675534 (100, 512)
+width: 	 227
+bgr init
+train_1.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4adf94fd0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4adf94fd0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4adf946a0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff4adf946a0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [75/75]	Time 0.005 (0.005)	Data 18.552 (18.552)	
+tensor(4660.7168) test
+100 num_clusters
+K-means done
+[0.51080351 0.63335584 0.74611749 0.84233626 0.90817016 0.95644835] 0.5926294643432237
+Epoch-0 0.5108  0.6334  0.7461  0.8423  0.9082  0.9564  0.5926
+######################################## 
+ BatchNorm frozen
+Epoch: [181][6/6]	Time 1.304	Loss 0.8647 	Loss_rot 0.7359 	Loss_rot_test 0.0000 	accuracy 0.0250 	Pos 0.4540	Neg 0.3464 	
+Epoch: [182][6/6]	Time 1.230	Loss 0.8603 	Loss_rot 0.7840 	Loss_rot_test 0.0000 	accuracy 0.0271 	Pos 0.5388	Neg 0.3277 	
+Epoch: [183][6/6]	Time 1.296	Loss 0.8637 	Loss_rot 0.6147 	Loss_rot_test 0.0000 	accuracy 0.0354 	Pos 0.5799	Neg 0.3273 	
+Epoch: [184][6/6]	Time 1.261	Loss 0.8599 	Loss_rot 0.6883 	Loss_rot_test 0.0000 	accuracy 0.0354 	Pos 0.5547	Neg 0.3493 	

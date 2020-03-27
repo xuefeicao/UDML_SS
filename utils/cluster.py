@@ -9,13 +9,11 @@ import torch
 from sklearn.cluster import KMeans
 from sklearn.metrics.cluster import adjusted_rand_score
 import shutil
+from ..data import dataset
+from dataset import Dict
 
 
-dic = {
-    'cub': "CUB_200_2011",
-    'car': "Cars196",
-    'product': "Products",
-}
+
 
 
 def cluster_(features,  labels, n_clusters):
@@ -40,18 +38,18 @@ def normalize(X):
 def create_fake_labels(train_features, train_labels, args, init_centers="k-means++"):
     n_clusters = args.num_clusters
     root = args.data_root
-    root = os.path.join(root, dic[args.data])
+    root = os.path.join(root, Dict[args.data])
     save_dir = args.save_dir
-    os.makedirs(os.path.join(save_dir, dic[args.data]), exist_ok=True)
+    os.makedirs(os.path.join(save_dir, Dict[args.data]), exist_ok=True)
     
     with open(os.path.join(root, "train.txt")) as f:
         alldata = f.readlines()
         if os.path.exists(os.path.join(root, "test.txt")):
-            shutil.copyfile(os.path.join(root, "test.txt"), os.path.join(save_dir, dic[args.data], "test.txt"))
+            shutil.copyfile(os.path.join(root, "test.txt"), os.path.join(save_dir, Dict[args.data], "test.txt"))
         if os.path.exists(os.path.join(root, "gallery.txt")):
-            shutil.copyfile(os.path.join(root, "gallery.txt"), os.path.join(save_dir, dic[args.data], "gallery.txt"))
+            shutil.copyfile(os.path.join(root, "gallery.txt"), os.path.join(save_dir, Dict[args.data], "gallery.txt"))
         if os.path.exists(os.path.join(root, "query.txt")):
-            shutil.copyfile(os.path.join(root, "querry.txt"), os.path.join(save_dir, dic[args.data], "querry.txt"))
+            shutil.copyfile(os.path.join(root, "querry.txt"), os.path.join(save_dir, Dict[args.data], "querry.txt"))
     train_names = []
     train_data_labels = []
     for x in alldata:
@@ -61,7 +59,7 @@ def create_fake_labels(train_features, train_labels, args, init_centers="k-means
     if args.rot_only:
         train_data_labels = np.random.permutation(train_data_labels)
         new_data = [" ".join([image, str(label)]) for image, label in zip(train_names, train_data_labels)]
-        with open(os.path.join(save_dir, dic[args.data], "train_1.txt"), 'w') as f:
+        with open(os.path.join(save_dir, Dict[args.data], "train_1.txt"), 'w') as f:
             for item in new_data:
                 f.write("%s\n" % item)
 
@@ -88,7 +86,7 @@ def create_fake_labels(train_features, train_labels, args, init_centers="k-means
             dic_label[i] += 1
     print("label", len([i for i in dic_label if dic_label[i] == 1]), len(dic_label))
     
-    with open(os.path.join(save_dir, dic[args.data], "train_1.txt"), 'w') as f:
+    with open(os.path.join(save_dir, Dict[args.data], "train_1.txt"), 'w') as f:
         for item in new_data:
             f.write("%s\n" % item)
     print(adjusted_rand_score(train_labels, kmeans.labels_), kmeans.cluster_centers_.shape)

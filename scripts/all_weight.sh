@@ -8,7 +8,7 @@ do
         do
             for rot_batch in 16
             do
-                for rot_lr in 0.000005
+                for rot_lr in 0.00001
                 do
                     for num_clusters in 100
                     do

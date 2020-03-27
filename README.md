@@ -33,7 +33,7 @@ art by a signicant margin on all the standard benchmarks.
 The structure of the dataset should be like
 
 ```
-CUB-200-2011
+CUB_200_2011
 |_ train.txt
 |_ test.txt
 |_ train
@@ -47,25 +47,26 @@ CUB-200-2011
         |_ <im-N-name>.jpg
     |_ ...
 |_ test
+    |_ ...
 ```
-The "train.txt" or "test.txt"contains the samples for training and testcd, which is like
+The "train.txt" or "test.txt" contains the samples for training and testcd, which is like
 ```
 train/020.Yellow_breasted_Chat/Yellow_Breasted_Chat_0075_21715.jpg 0
 train/020.Yellow_breasted_Chat/Yellow_Breasted_Chat_0012_21961.jpg 0
 train/020.Yellow_breasted_Chat/Yellow_Breasted_Chat_0077_21986.jpg 0
 ...
 ```
-
-
-
-
+You need to provide a DATA_ROOT in scripts/run_train_test.sh. And your data should be stored in 
+${DATA_ROOT}. So if you want to run our algorithm in three benchmark datasets. You will have three data folders Cars196, CUB_200_2011, Products in ${DATA_ROOT}.
 
 ## Reproduce our work
-
+```
+cd scripts
+./all_weight.sh (you need to change the DATA_ROOT in scripts/run_train_test.sh to your data root)
+```
 
 ## Run with your own dataset
-
-
+Our code can be easily extended to run on other datasets. There are two steps needed to achieve this goal. Frist, give your dataset a name. Second, register this dataset in Dict defined in data/dataset.py by providing its folder name. 
 
 ### Requirements
 * Python >= 3.5
