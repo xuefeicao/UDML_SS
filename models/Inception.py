@@ -10,10 +10,9 @@ from collections import OrderedDict
 import torch
 import torch.nn as nn
 import os
-import hickle
 
-# originate from
-# https://github.com/vadimkantorov/metriclearningbench
+
+
 
 class InceptionModule(nn.Module):
     def __init__(self, inplane, outplane_a1x1, outplane_b3x3_reduce, outplane_b3x3, outplane_c5x5_reduce, outplane_c5x5, outplane_pool_proj):
