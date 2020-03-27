@@ -29,6 +29,35 @@ art by a signicant margin on all the standard benchmarks.
   
   for the experiments, we split 59,551 images of 11,318 classes for training and 60,502 images of 11,316 classes for testing
 
+## Dataset
+The structure of the dataset should be like
+
+```
+CUB-200-2011
+|_ train.txt
+|_ test.txt
+|_ train
+    |_ 001.Black_footed_Albatross
+        |_ <im-1-name>.jpg
+        |_ ...
+        |_ <im-N-name>.jpg
+    |_ 002.Laysan_Albatross 
+        |_ <im-1-name>.jpg
+        |_ ...
+        |_ <im-N-name>.jpg
+    |_ ...
+|_ test
+```
+The "train.txt" or "test.txt"contains the samples for training and testcd, which is like
+```
+train/020.Yellow_breasted_Chat/Yellow_Breasted_Chat_0075_21715.jpg 0
+train/020.Yellow_breasted_Chat/Yellow_Breasted_Chat_0012_21961.jpg 0
+train/020.Yellow_breasted_Chat/Yellow_Breasted_Chat_0077_21986.jpg 0
+...
+```
+
+
+
 
 
 ## Reproduce our work
