@@ -5,7 +5,7 @@ import torch
 from torch.backends import cudnn
 from evaluations import extract_features
 import models
-import DataSet
+from data import dataset
 from utils.serialization import load_checkpoint
 cudnn.benchmark = True
 
@@ -14,11 +14,10 @@ def Model2Feature(data, net, checkpoint, dim=512, width=224, root=None, nThreads
     dataset_name = data
     if model is None:
         model = models.create(net, dim=dim, pretrained=False)
-        # resume = load_checkpoint(ckp_path)
         resume = checkpoint
         model.load_state_dict(resume['state_dict'], strict=False)
         model = torch.nn.DataParallel(model).cuda()
-    data = DataSet.create(data, width=width, root=root, mode="test", self_supervision_rot=0, args=args)
+    data = dataset.Dataset(data, width=width, root=root, mode="test", self_supervision_rot=0, args=args)
     
     
     if dataset_name in ['shop', 'jd_test', 'cifar']:

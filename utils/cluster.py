@@ -1,8 +1,6 @@
 # coding=utf-8
 from __future__ import absolute_import, print_function
-import mkl
-mkl.get_max_threads()
-import faiss
+
 
 import numpy as np
 import os
@@ -11,14 +9,12 @@ import torch
 from sklearn.cluster import KMeans
 from sklearn.metrics.cluster import adjusted_rand_score
 import shutil
-# from sklearn.mixture import GaussianMixture
+
 
 dic = {
     'cub': "CUB_200_2011",
     'car': "Cars196",
     'product': "Products",
-    'shop': "InShopClothes",
-    'cifar': "Cifar10"
 }
 
 
@@ -80,46 +76,8 @@ def create_fake_labels(train_features, train_labels, args, init_centers="k-means
     # norm = train_features.norm(dim=1, p=2, keepdim=True)
     # train_features = train_features.div(norm.expand_as(train_features))
     train_features = train_features.numpy().astype(np.float32)
-    if (args.data in ["product","cifar"]) and ((n_clusters > 1000) or ("ResNet" in args.net)):
-        
-        # Change faiss seed at each k-means so that the randomly picked
-        # initialization centroids do not correspond to the same feature ids
-        # from an epoch to another.
-        if ("ResNet" in args.net):
-            kmeans = faiss.Kmeans(train_features.shape[1], n_clusters, niter=100)
-            kmeans.min_points_per_centroid = 3
-            if init_centers != "k-means++":
-                kmeans.centroids = init_centers
-            kmeans.train(train_features)
-            _, I = kmeans.index.search(train_features, 1)
-            kmeans.cluster_centers_ = kmeans.centroids
-        else:
-            kmeans = faiss.Clustering(train_features.shape[1], n_clusters)
-            kmeans.min_points_per_centroid = 3
-            kmeans.seed = np.random.randint(1234)
-            kmeans.niter = 20
-            res = faiss.StandardGpuResources()
-            flat_config = faiss.GpuIndexFlatConfig()
-            flat_config.useFloat16 = False
-            flat_config.device = 0
-            index = faiss.GpuIndexFlatL2(res, train_features.shape[1], flat_config)
-            
-            if init_centers != "k-means++":
-                print(init_centers.shape)
-                faiss.copy_array_to_vector(init_centers.ravel(), kmeans.centroids)
-        
-            # perform the training
-            kmeans.train(train_features, index)
-            _, I = index.search(train_features, 1)
-            kmeans.cluster_centers_ = faiss.vector_to_array(kmeans.centroids)
-        
-        kmeans.labels_ = [int(n[0]) for n in I]
-        
-        
 
-    else:
-        print("use old")
-        kmeans = KMeans(n_clusters=n_clusters, n_init=10, random_state=0, n_jobs=10, init=init_centers, max_iter=100, precompute_distances=True).fit(train_features)
+    kmeans = KMeans(n_clusters=n_clusters, n_init=10, random_state=0, n_jobs=10, init=init_centers, max_iter=100, precompute_distances=True).fit(train_features)
     print("finish cluster")
     new_data = [" ".join([image, str(label)]) for image, label in zip(train_names, kmeans.labels_)]
     dic_label = {}

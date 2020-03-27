@@ -1,7 +1,4 @@
 from __future__ import absolute_import, print_function
-"""
-CUB-200-2011 data-set for Pytorch
-"""
 import torch
 import torch.utils.data as data
 from PIL import Image
@@ -9,8 +6,14 @@ from PIL import Image
 import os
 import sys
 import numpy as np
-from DataSet import transforms 
+from data import transforms 
 from collections import defaultdict
+
+Dict = {
+    'cub': "CUB_200_2011",
+    'car': "Cars196",
+    'product': "Products",
+}
 
 
 
@@ -77,7 +80,6 @@ class MyData(data.Dataset):
 
         # Initialization data path and train(gallery or query) txt path
 
-        self.root = root
         self.self_supervision_rot = self_supervision_rot
         self.rot_bt = rot_bt
         self.mode = mode
@@ -122,7 +124,7 @@ class MyData(data.Dataset):
 
     def __getitem__(self, index):
         fn, label = self.images[index], self.labels[index]
-        if self.root[0] != "/":
+        if "result" not in self.root:
             fn = os.path.join(self.root, fn)
         if not self.rot_bt:
             all_mats = self.loader(fn, 0)
@@ -146,16 +148,16 @@ class MyData(data.Dataset):
 
 
 class Dataset:
-    def __init__(self, width=227, origin_width=256, ratio=0.16, root=None, transform=None, mode="train", self_supervision_rot=0, rot_bt=1, corruption=0, args=None):
+    def __init__(self, whichdata, width=227, origin_width=256, ratio=0.16, root=None, transform=None, mode="train", self_supervision_rot=0, rot_bt=1, corruption=0, args=None):
         print('width: \t {}'.format(width))
+        root = os.path.join(root, Dict[whichdata])
         transform_Dict = Generate_transform_Dict(origin_width=origin_width, width=width, ratio=ratio, args=args)
         
         train_txt = "train.txt"
         if corruption > 0:
             train_txt = "train_" + str(corruption) + ".txt"
-            print(train_txt + " is used!")
-        else:
-            raise Exception('wrong data used!')
+        print(train_txt + " is used!")
+
         
 
         train_txt = os.path.join(root, train_txt)

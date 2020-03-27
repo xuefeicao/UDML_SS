@@ -21,7 +21,7 @@ from utils import orth_reg
 from evaluations import extract_features
 from test import extract_recalls
 
-import DataSet
+from data import dataset
 import numpy as np
 import os.path as osp
 import ast
@@ -74,7 +74,7 @@ def main(args):
             create_fake_labels(None, None, args)
             
         else:
-            data = DataSet.create(args.data, ratio=args.ratio, width=args.width, origin_width=args.origin_width, root=args.data_root, self_supervision_rot=0, mode="test", rot_bt=args.rot_bt, corruption=args.corruption, args=args)
+            data = dataset.Dataset(args.data, ratio=args.ratio, width=args.width, origin_width=args.origin_width, root=args.data_root, self_supervision_rot=0, mode="test", rot_bt=args.rot_bt, corruption=args.corruption, args=args)
 
             fake_train_loader = torch.utils.data.DataLoader(
                     data.train, batch_size=100,
@@ -139,13 +139,10 @@ def main(args):
 
     optimizer = torch.optim.Adam(param_groups, lr=args.lr,
                                  weight_decay=args.weight_decay)
-    if args.loss == "Weight":
-        criterion = losses.create(args.loss, margin=args.margin, alpha=args.alpha, beta=args.beta, base=args.loss_base).cuda()
-    else:
-        criterion = losses.create(args.loss, margin=args.margin, alpha=args.alpha, base=args.loss_base).cuda()
+    criterion = losses.create(args.loss, margin=args.margin, alpha=args.alpha, beta=args.beta, base=args.loss_base).cuda()
+    
 
-
-    data = DataSet.create(args.data, ratio=args.ratio, width=args.width, origin_width=args.origin_width, root=args.save_dir, self_supervision_rot=args.self_supervision_rot, rot_bt=args.rot_bt, corruption=1, args=args)
+    data = dataset.Dataset(args.data, ratio=args.ratio, width=args.width, origin_width=args.origin_width, root=args.save_dir, self_supervision_rot=args.self_supervision_rot, rot_bt=args.rot_bt, corruption=1, args=args)
     train_loader = torch.utils.data.DataLoader(
         data.train, batch_size=args.batch_size,
         sampler=FastRandomIdentitySampler(data.train, num_instances=args.num_instances),
@@ -174,7 +171,7 @@ def main(args):
         
         if ((epoch+1) % args.up_step == 0) and (not args.rot_only):
             # rewrite train_1.txt file
-            data = DataSet.create(args.data, ratio=args.ratio, width=args.width, origin_width=args.origin_width, root=args.data_root, self_supervision_rot=0, mode="test", rot_bt=args.rot_bt, corruption=args.corruption, args=args)
+            data = dataset.Dataset(args.data, ratio=args.ratio, width=args.width, origin_width=args.origin_width, root=args.data_root, self_supervision_rot=0, mode="test", rot_bt=args.rot_bt, corruption=args.corruption, args=args)
             fake_train_loader = torch.utils.data.DataLoader(data.train, batch_size=args.batch_size, shuffle=False, drop_last=False,
             pin_memory=True, num_workers=args.nThreads)
             train_feature, train_labels = extract_features(model, fake_train_loader, print_freq=1e5, metric=None, pool_feature=args.pool_feature, org_feature=(args.dim % 64 != 0))
@@ -184,7 +181,7 @@ def main(args):
             time.sleep(60)
             np.save(fake_centers_dir, fake_centers)
             # reload data
-            data = DataSet.create(args.data, ratio=args.ratio, width=args.width, origin_width=args.origin_width, root=args.save_dir, self_supervision_rot=args.self_supervision_rot, rot_bt=args.rot_bt, corruption=1, args=args)
+            data = dataset.Dataset(args.data, ratio=args.ratio, width=args.width, origin_width=args.origin_width, root=args.save_dir, self_supervision_rot=args.self_supervision_rot, rot_bt=args.rot_bt, corruption=1, args=args)
     
 
             train_loader = torch.utils.data.DataLoader(
@@ -194,9 +191,9 @@ def main(args):
             
 
             # # test on testing data
-            # extract_recalls(data=args.data, data_root=args.data_root, width=args.width, net=args.net, checkpoint=None,
-            #         dim=args.dim, batch_size=args.batch_size, nThreads=args.nThreads, pool_feature=args.pool_feature,
-            #         gallery_eq_query=args.gallery_eq_query, model=model)
+            extract_recalls(data=args.data, data_root=args.data_root, width=args.width, net=args.net, checkpoint=None,
+                    dim=args.dim, batch_size=args.batch_size, nThreads=args.nThreads, pool_feature=args.pool_feature,
+                    gallery_eq_query=args.gallery_eq_query, model=model)
             model.train()
             if (args.freeze_BN is True) and (args.pretrained):
                 print(40 * '#', '\n BatchNorm frozen')

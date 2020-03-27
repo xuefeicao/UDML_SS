@@ -8,11 +8,11 @@ do
         do
             for rot_batch in 16
             do
-                for rot_lr in 0.000005 0.00001
+                for rot_lr in 0.000005
                 do
                     for num_clusters in 100
                     do
-                    ./run_train_00.sh $rot $data Weight ${rot_lr} 40 1 ${rot_batch} 0.00001 $DIM 5 ${num_clusters}
+                    sbatch -o verify.out run_train_test.sh $rot $data Weight ${rot_lr} 40 1 ${rot_batch} 0.00001 $DIM 5 ${num_clusters}
                     done
                 done
             done 

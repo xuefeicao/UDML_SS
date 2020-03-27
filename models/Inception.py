@@ -137,11 +137,12 @@ dic = {"3x3":"b", "5x5":"c", "1x1":"a", "poo":"d"}
 def inception_v1_ml(dim=512, pretrained=True, self_supervision_rot=0, model_path=None):
     model = Model(dim, self_supervision_rot)
     if model_path is None:
-        model_path = "/private/home/xuefeicao01/metric_learning/Deep_Metric_without_label/pretrained/inception.pth"
+        model_path = "../pretrained/inception.pth"
     if pretrained:
         print("loaded++++++++++++++++++++++++++++++++++")
         model_dict = model.state_dict()
         pretrained_dict = torch.load(model_path)
+        print(pretrained_dict.keys())
         for key in list(pretrained_dict.keys()):
             l = key.split(".")
             if "inception" in l[0]:
