@@ -19,9 +19,8 @@ Dict = {
 
 def default_loader(path, self_supervision_rot=0):
     mat = np.array(Image.open(path).convert('RGB'))
-    #mat = np.rot90(mat, np.random.choice(range(4)), axes=(0, 1))
     all_mats = [Image.fromarray(mat)]
-    # test rotation influence
+
 
     if self_supervision_rot:
         for i in range(1, 4):

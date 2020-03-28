@@ -19,8 +19,7 @@ class RandomIdentitySampler(Sampler):
 
         self.pids = list(self.index_dic.keys())
         self.num_samples = len(self.pids)
-        # print(len(self))
-        # print(self.num_samples)
+        
 
     def __len__(self):
         return self.num_samples * self.num_instances
@@ -45,8 +44,6 @@ class FastRandomIdentitySampler(Sampler):
         self.num_instances = num_instances
         self.index_dic = defaultdict(list)
 
-        # for index, (_, pid) in enumerate(data_source):
-        #     self.index_dic[pid].append(index)
 
         self.index_dic = data_source.Index
 
@@ -67,5 +64,4 @@ class FastRandomIdentitySampler(Sampler):
             else:
                 t = np.random.choice(t, size=self.num_instances, replace=True)
             ret.extend(t)
-        # print('Done data sampling')
         return iter(ret)

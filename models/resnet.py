@@ -52,23 +52,14 @@ class ResNet(nn.Module):
         
         for m in all_extra_modules:
             if isinstance(m, nn.Conv2d):
-                #print(m)
                 nn.init.kaiming_normal_(m.weight)
             elif isinstance(m, nn.BatchNorm2d):
-                #print(m)
                 nn.init.constant_(m.weight, 1)
                 nn.init.constant_(m.bias, 0)
             elif isinstance(m, nn.Linear):
-                #print(m)
                 nn.init.constant_(m.bias, 0)
 
     def forward(self, x, rot=False, org_feature=False):
-        # b, g, r = x[:,0,:,:], x[:,1,:,:], x[:,2,:,:]
-        # n, h, w = b.size()
-        # b = b.view((n, 1, h, w))
-        # g = g.view((n, 1, h, w))
-        # r = r.view((n, 1, h, w))
-        # x = torch.cat([r, g, b], dim=1)
 
         x = self.features(x)
         x = x.view(x.size(0), -1)

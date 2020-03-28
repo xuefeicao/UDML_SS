@@ -39,14 +39,3 @@ class BatchGenerator(object):
         result = [self.labels[k] for k in ret]
         return result
 
-
-def main():
-    labels = np.load('/Users/wangxun/Deep_metric/labels.npy')
-    num_instances = 8
-    batch_size = 128
-    Batch = BatchGenerator(labels, num_instances=num_instances, batch_size=batch_size)
-    print(Batch.batch())
-
-if __name__ == '__main__':
-    main()
-    print('Hello world')

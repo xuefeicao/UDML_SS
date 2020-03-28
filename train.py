@@ -29,7 +29,7 @@ cudnn.benchmark = True
 
 use_gpu = True
 
-# Batch Norm Freezer : bring 2% improvement on CUB 
+
 def set_bn_eval(m):
     classname = m.__class__.__name__
     if classname.find('BatchNorm') != -1:
@@ -87,9 +87,6 @@ def main(args):
 
             del train_feature
 
-            extract_recalls(data=args.data, data_root=args.data_root, width=args.width, net=args.net, checkpoint=None,
-                            dim=args.dim, batch_size=100, nThreads=args.nThreads, pool_feature=args.pool_feature,
-                            gallery_eq_query=args.gallery_eq_query, model=model, org_feature=True, args=args)
             fake_centers = "k-means++"
 
             torch.cuda.empty_cache()
@@ -190,10 +187,10 @@ def main(args):
                 drop_last=True, pin_memory=True, num_workers=args.nThreads)
             
 
-            # # test on testing data
-            extract_recalls(data=args.data, data_root=args.data_root, width=args.width, net=args.net, checkpoint=None,
-                    dim=args.dim, batch_size=args.batch_size, nThreads=args.nThreads, pool_feature=args.pool_feature,
-                    gallery_eq_query=args.gallery_eq_query, model=model)
+            # test on testing data
+            # extract_recalls(data=args.data, data_root=args.data_root, width=args.width, net=args.net, checkpoint=None,
+            #         dim=args.dim, batch_size=args.batch_size, nThreads=args.nThreads, pool_feature=args.pool_feature,
+            #         gallery_eq_query=args.gallery_eq_query, model=model)
             model.train()
             if (args.freeze_BN is True) and (args.pretrained):
                 print(40 * '#', '\n BatchNorm frozen')

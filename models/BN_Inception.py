@@ -6,14 +6,11 @@ from torch.autograd import Variable
 class Embedding(nn.Module):
     def __init__(self, in_dim, out_dim, dropout=None, normalized=True):
         super(Embedding, self).__init__()
-        self.bn = nn.BatchNorm2d(in_dim, eps=1e-5)
         self.linear = nn.Linear(in_features=in_dim, out_features=out_dim)
         self.dropout = dropout
         self.normalized = normalized
 
     def forward(self, x):
-        # x = self.bn(x)
-        # x = F.relu(x, inplace=True)
         if self.dropout is not None:
             x = nn.Dropout(p=self.dropout)(x, inplace=True)
         x = self.linear(x)
