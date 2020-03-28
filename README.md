@@ -78,7 +78,7 @@ This library contains code that has been adapted and modified from the following
 - https://github.com/vadimkantorov/metriclearningbench
 
 ## Acknowledgements
-Thank you to Ser-Nam Lim from Facebook AI and Facebook AI. This project was completed during my part-time work at Facebook. 
+Thank you to Ser-Nam Lim from Facebook AI and Facebook AI. This project was completed during my internship at Facebook. 
 
 ## Citing our work
 ```latex

@@ -9,8 +9,10 @@ import torch
 from sklearn.cluster import KMeans
 from sklearn.metrics.cluster import adjusted_rand_score
 import shutil
-from ..data import dataset
-from dataset import Dict
+import sys
+sys.path.append("..")
+from data.dataset import Dict
+
 
 
 
