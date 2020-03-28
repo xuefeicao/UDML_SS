@@ -62,8 +62,9 @@ ${DATA_ROOT}. So if you want to run our algorithm in three benchmark datasets. Y
 ## Reproduce our work
 ```
 cd scripts
-./all_weight.sh (you need to change the DATA_ROOT in scripts/run_train_test.sh to your data root)
+./all_weight.sh (you need to change the DATA_ROOT and ROOT in scripts/run_train_test.sh to your data root and outpur dir respectively.)
 ```
+We also provided a sample output log of using UDML-SS on CUB dataset in scripts/verify_cub.out.
 
 ## Run with your own dataset
 Our code can be easily extended to run on other datasets. There are two steps needed to achieve this goal. Frist, give your dataset a name. Second, register this dataset in Dict defined in data/dataset.py by providing its folder name. 

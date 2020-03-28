@@ -123,7 +123,7 @@ class MyData(data.Dataset):
 
     def __getitem__(self, index):
         fn, label = self.images[index], self.labels[index]
-        if "result" not in self.root:
+        if fn[0] != '/':
             fn = os.path.join(self.root, fn)
         if not self.rot_bt:
             all_mats = self.loader(fn, 0)
