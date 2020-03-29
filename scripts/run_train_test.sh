@@ -1,18 +1,18 @@
 #!/bin/bash
-#SBATCH --time=1-00:00:00
-#SBATCH -p gpu --gres=gpu:1
-#SBATCH --nodes=1
-#SBATCH --mem 64G
-#SBATCH --cpus-per-task 10
-#SBATCH --constraint="quadrortx"
+# #SBATCH --time=10:00:00
+# #SBATCH -p gpu --gres=gpu:1
+# #SBATCH --nodes=1
+# #SBATCH --mem 64G
+# #SBATCH --cpus-per-task 6
+# #SBATCH --constraint="quadrortx"
 
 
-module load gcc/7.2
-module load anaconda/3-5.2.0
-module load cuda/10.0.130
-module load cudnn/7.4
-source deactivate my_env_1.2
-source activate my_env_1.2
+# module load gcc/7.2
+# module load anaconda/3-5.2.0
+# module load cuda/10.0.130
+# module load cudnn/7.4
+# source deactivate my_env_1.2
+# source activate my_env_1.2
 
 
 

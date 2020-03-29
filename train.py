@@ -128,8 +128,8 @@ def main(args):
                    (id(p) not in new_param_ids) and (id(p) not in new_rot_param_ids)]
 
     param_groups = [
-                {'params': base_params, 'lr_mult': 0.0},
-                {'params': new_params, 'lr_mult': 1.0},
+                {'params': base_params},
+                {'params': new_params},
                 {'params': new_rot_params, 'lr': args.rot_lr}]
 
     print('initial model is save at %s' % save_dir)
@@ -152,6 +152,7 @@ def main(args):
 
         train(epoch=epoch, model=model, criterion=criterion,
               optimizer=optimizer, train_loader=train_loader, args=args)
+
 
         
         

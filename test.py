@@ -21,7 +21,7 @@ def extract_recalls(data, data_root, width, net, checkpoint, dim, batch_size, nT
     if gallery_eq_query is True:
         sim_mat = sim_mat - torch.eye(sim_mat.size(0))
     
-    print(torch.sum(gallery_feature), "test")
+
 
     recall_ks = Recall_at_ks(sim_mat, query_ids=query_labels, gallery_ids=gallery_labels, data=data, args=args, epoch=epoch)
 

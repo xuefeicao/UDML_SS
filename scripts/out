@@ -1,0 +1,384 @@
+## SLURM PROLOG ###############################################################
+##    Job ID : 11438293
+##  Job Name : run_train_test.sh
+##  Nodelist : gpu2003
+##      CPUs : 
+##  Mem/Node : 65536 MB
+## Directory : /gpfs_home/xcao1/UDML_SS/scripts
+##   Started : Sat Mar 28 23:26:24 EDT 2020
+###############################################################################
+module: loading 'gcc/7.2'
+module: gcc: "Note: loading the gcc module overrides the gcc version on the system.  If you want to revert to the version of gcc provided by the OS, unload the gcc module."
+module: unloading 'anaconda/3-5.2.0'
+module: loading 'anaconda/3-5.2.0'
+module: loading 'cuda/10.0.130'
+module: loading 'cudnn/7.4'
+module: cudnn: To use: module load cuda/10.0.130
+Begin Training!
+25396838400
+Namespace(alpha=40, batch_size=80, beta=2.0, corruption=0, data='cub', data_root='/gpfs/data/xl6/xuefei/ML/data', dim=512, epochs=600, freeze_BN=True, gallery_eq_query=True, init='random', k=16, loss='Weight', loss_base=0.75, lr=1e-05, margin=0.5, momentum=0.9, nThreads=16, net='Inception', num_clusters=100, num_instances=5, origin_width=256, orth_reg=0, pool_feature=False, pretrained=True, print_freq=20, ratio=0.16, resume='yes', rot_batch=16, rot_bt=1, rot_lr=1e-05, rot_only=0.0, save_dir='/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/ckpt/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2', save_step=50, self_supervision_rot=0.1, up_step=5, use_test=0.0, weight_decay=0.0005, width=227)
+Learn Rate  	1.0e-05
+Epochs  	00600
+Log Path 	/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/ckpt/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2
+Network 	 Inception
+Data Set 	 cub
+Batch Size  	 80
+Num-Instance  	 5
+Embedded Dimension 	 512
+Loss Function 	Weight
+Alpha 	 40
+Begin to fine tune Inception Network
+########################################
+Sequential(
+  (0): Linear(in_features=1024, out_features=512, bias=True)
+  (1): ReLU(inplace=True)
+  (2): Linear(in_features=512, out_features=4, bias=True)
+  (3): ReLU(inplace=True)
+)
+loaded++++++++++++++++++++++++++++++++++
+dict_keys(['inception_3a.3x3_reduce.bias', 'inception_4e.1x1.bias', 'inception_4b.1x1.bias', 'inception_4a.pool_proj.weight', 'inception_4d.1x1.weight', 'inception_3b.pool_proj.bias', 'inception_4e.1x1.weight', 'inception_4d.5x5_reduce.weight', 'inception_4b.pool_proj.weight', 'inception_3a.3x3.bias', 'inception_4b.3x3.bias', 'inception_3b.5x5_reduce.weight', 'inception_4a.1x1.bias', 'inception_3b.1x1.weight', 'inception_5b.5x5_reduce.weight', 'inception_4e.5x5.bias', 'inception_4d.1x1.bias', 'inception_4d.5x5.bias', 'inception_3b.3x3_reduce.weight', 'inception_5b.3x3.bias', 'inception_3a.pool_proj.weight', 'inception_4c.5x5_reduce.bias', 'inception_3b.3x3.bias', 'inception_5a.3x3_reduce.weight', 'inception_4e.pool_proj.weight', 'inception_4a.1x1.weight', 'inception_4e.3x3.weight', 'inception_5b.3x3_reduce.bias', 'inception_4a.5x5_reduce.weight', 'inception_4a.5x5_reduce.bias', 'inception_5a.3x3.weight', 'inception_4c.3x3.weight', 'inception_4e.5x5_reduce.bias', 'inception_4c.5x5.weight', 'inception_4a.3x3.bias', 'inception_4c.pool_proj.bias', 'inception_4d.3x3.bias', 'conv1.7x7_s2.bias', 'inception_4b.1x1.weight', 'inception_4a.pool_proj.bias', 'inception_4b.3x3_reduce.weight', 'inception_5b.5x5.bias', 'inception_3a.5x5_reduce.bias', 'inception_5a.1x1.bias', 'inception_4d.pool_proj.bias', 'conv2.3x3_reduce.bias', 'inception_4a.3x3.weight', 'inception_4d.3x3_reduce.weight', 'inception_5a.5x5_reduce.weight', 'inception_3b.5x5_reduce.bias', 'inception_4b.3x3_reduce.bias', 'inception_3a.3x3.weight', 'inception_4c.3x3_reduce.bias', 'inception_5a.3x3.bias', 'inception_4d.3x3.weight', 'inception_5b.1x1.bias', 'inception_4a.5x5.weight', 'inception_3b.3x3_reduce.bias', 'inception_4a.3x3_reduce.weight', 'inception_3a.1x1.weight', 'inception_5a.5x5_reduce.bias', 'inception_4d.pool_proj.weight', 'inception_3b.1x1.bias', 'inception_4b.5x5_reduce.weight', 'inception_3b.3x3.weight', 'inception_4c.3x3_reduce.weight', 'inception_5b.1x1.weight', 'inception_5b.5x5_reduce.bias', 'inception_4c.5x5_reduce.weight', 'inception_5b.5x5.weight', 'inception_5a.5x5.bias', 'conv1.7x7_s2.weight', 'inception_3b.5x5.weight', 'inception_3a.1x1.bias', 'inception_4c.pool_proj.weight', 'inception_4e.3x3_reduce.weight', 'inception_5a.1x1.weight', 'inception_4c.1x1.weight', 'inception_5b.pool_proj.bias', 'inception_4e.5x5.weight', 'inception_4d.5x5_reduce.bias', 'inception_4b.5x5_reduce.bias', 'inception_4e.3x3.bias', 'inception_5a.pool_proj.bias', 'inception_3b.5x5.bias', 'inception_4b.5x5.bias', 'inception_4e.3x3_reduce.bias', 'inception_4e.pool_proj.bias', 'inception_5b.3x3.weight', 'conv2.3x3.bias', 'inception_5b.3x3_reduce.weight', 'inception_3a.5x5.bias', 'inception_5a.3x3_reduce.bias', 'inception_3a.pool_proj.bias', 'inception_5a.5x5.weight', 'inception_4d.3x3_reduce.bias', 'inception_4c.5x5.bias', 'inception_4b.pool_proj.bias', 'inception_4b.3x3.weight', 'inception_3a.3x3_reduce.weight', 'inception_4c.3x3.bias', 'conv2.3x3_reduce.weight', 'inception_4e.5x5_reduce.weight', 'inception_5b.pool_proj.weight', 'inception_3a.5x5_reduce.weight', 'inception_4c.1x1.bias', 'inception_3b.pool_proj.weight', 'inception_4a.3x3_reduce.bias', 'inception_5a.pool_proj.weight', 'inception_4b.5x5.weight', 'inception_3a.5x5.weight', 'conv2.3x3.weight', 'inception_4a.5x5.bias', 'inception_4d.5x5.weight'])
+114
+finished
+load model from /gpfs/data/xl6/xuefei/ML/results/Deep_Metric/ckpt/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2/ckp_ep600.pth.tar
+=> Loaded checkpoint '/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/ckpt/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2/ckp_ep600.pth.tar'
+######################################## 
+ BatchNorm frozen
+{139820181032896, 139820173377608, 139820173377680, 139820173377752}
+initial model is save at /gpfs/data/xl6/xuefei/ML/results/Deep_Metric/ckpt/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2
+width: 	 227
+bgr init
+train_1.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7f2a6b2f84a8>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7f2a6b2f84a8>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Begin Testing!
+Namespace(batch_size=100, data='cub', data_root='/gpfs/data/xl6/xuefei/ML/data', dim=512, gallery_eq_query=True, nThreads=16, net='Inception', pool_feature=False, resume='/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/ckpt/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2/ckp_ep50.pth.tar', save_txt='/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/result/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2.txt', width=227) False
+=> Loaded checkpoint '/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/ckpt/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2/ckp_ep50.pth.tar'
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7f2805fd6240>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7f2805fd6240>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [60/60]	Time 0.012 (0.012)	Data 17.701 (17.701)	
+tensor(-1106.3036) test
+(5924, 16)
+100 num_clusters
+K-means done
+[0.48497637 0.60837272 0.72518569 0.82815665 0.90428764 0.95172181] 0.5677916873142114
+Epoch-50 0.4850  0.6084  0.7252  0.8282  0.9043  0.9517  0.5678
+Namespace(batch_size=100, data='cub', data_root='/gpfs/data/xl6/xuefei/ML/data', dim=512, gallery_eq_query=True, nThreads=16, net='Inception', pool_feature=False, resume='/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/ckpt/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2/ckp_ep100.pth.tar', save_txt='/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/result/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2.txt', width=227) False
+=> Loaded checkpoint '/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/ckpt/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2/ckp_ep100.pth.tar'
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7f14d33ac2b0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7f14d33ac2b0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [60/60]	Time 0.012 (0.012)	Data 20.028 (20.028)	
+tensor(-1120.2955) test
+(5924, 16)
+100 num_clusters
+K-means done
+[0.50033761 0.62913572 0.74392302 0.83997299 0.91002701 0.95577313] 0.5873010890537602
+Epoch-100 0.5003  0.6291  0.7439  0.8400  0.9100  0.9558  0.5873
+Namespace(batch_size=100, data='cub', data_root='/gpfs/data/xl6/xuefei/ML/data', dim=512, gallery_eq_query=True, nThreads=16, net='Inception', pool_feature=False, resume='/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/ckpt/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2/ckp_ep150.pth.tar', save_txt='/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/result/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2.txt', width=227) False
+=> Loaded checkpoint '/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/ckpt/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2/ckp_ep150.pth.tar'
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7f5d39bc22b0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7f5d39bc22b0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [60/60]	Time 0.012 (0.012)	Data 23.148 (23.148)	
+tensor(-1121.6351) test
+(5924, 16)
+100 num_clusters
+K-means done
+[0.51620527 0.64432816 0.75776502 0.8472316  0.9132343  0.95746117] 0.59082865816796
+Epoch-150 0.5162  0.6443  0.7578  0.8472  0.9132  0.9575  0.5908
+Namespace(batch_size=100, data='cub', data_root='/gpfs/data/xl6/xuefei/ML/data', dim=512, gallery_eq_query=True, nThreads=16, net='Inception', pool_feature=False, resume='/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/ckpt/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2/ckp_ep200.pth.tar', save_txt='/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/result/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2.txt', width=227) False
+=> Loaded checkpoint '/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/ckpt/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2/ckp_ep200.pth.tar'
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7f883b6c62e8>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7f883b6c62e8>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [60/60]	Time 0.012 (0.012)	Data 27.254 (27.254)	
+tensor(-1056.2377) test
+(5924, 16)
+100 num_clusters
+K-means done
+[0.52059419 0.64483457 0.75607698 0.8472316  0.91407833 0.96016205] 0.5988423918652722
+Epoch-200 0.5206  0.6448  0.7561  0.8472  0.9141  0.9602  0.5988
+Namespace(batch_size=100, data='cub', data_root='/gpfs/data/xl6/xuefei/ML/data', dim=512, gallery_eq_query=True, nThreads=16, net='Inception', pool_feature=False, resume='/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/ckpt/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2/ckp_ep250.pth.tar', save_txt='/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/result/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2.txt', width=227) False
+=> Loaded checkpoint '/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/ckpt/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2/ckp_ep250.pth.tar'
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7fc7709b62b0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7fc7709b62b0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [60/60]	Time 0.012 (0.012)	Data 20.374 (20.374)	
+tensor(-1094.0308) test
+(5924, 16)
+100 num_clusters
+K-means done
+[0.52869683 0.64500338 0.7602971  0.84959487 0.91222147 0.95813639] 0.5987340031421632
+Epoch-250 0.5287  0.6450  0.7603  0.8496  0.9122  0.9581  0.5987
+Namespace(batch_size=100, data='cub', data_root='/gpfs/data/xl6/xuefei/ML/data', dim=512, gallery_eq_query=True, nThreads=16, net='Inception', pool_feature=False, resume='/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/ckpt/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2/ckp_ep300.pth.tar', save_txt='/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/result/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2.txt', width=227) False
+=> Loaded checkpoint '/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/ckpt/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2/ckp_ep300.pth.tar'
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff807c342b0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7ff807c342b0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [60/60]	Time 0.012 (0.012)	Data 25.498 (25.498)	
+tensor(-1261.6725) test
+(5924, 16)
+100 num_clusters
+K-means done
+[0.53156651 0.65243079 0.76282917 0.85229575 0.91711681 0.95796759] 0.6039095281753343
+Epoch-300 0.5316  0.6524  0.7628  0.8523  0.9171  0.9580  0.6039
+Namespace(batch_size=100, data='cub', data_root='/gpfs/data/xl6/xuefei/ML/data', dim=512, gallery_eq_query=True, nThreads=16, net='Inception', pool_feature=False, resume='/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/ckpt/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2/ckp_ep350.pth.tar', save_txt='/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/result/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2.txt', width=227) False
+=> Loaded checkpoint '/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/ckpt/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2/ckp_ep350.pth.tar'
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7f43f7d8f2b0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7f43f7d8f2b0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [60/60]	Time 0.012 (0.012)	Data 19.116 (19.116)	
+(5924, 16)
+100 num_clusters
+K-means done
+[0.53882512 0.65310601 0.76097232 0.85297097 0.91458474 0.95796759] 0.6054355764731502
+Epoch-350 0.5388  0.6531  0.7610  0.8530  0.9146  0.9580  0.6054
+Namespace(batch_size=100, data='cub', data_root='/gpfs/data/xl6/xuefei/ML/data', dim=512, gallery_eq_query=True, nThreads=16, net='Inception', pool_feature=False, resume='/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/ckpt/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2/ckp_ep400.pth.tar', save_txt='/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/result/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2.txt', width=227) False
+=> Loaded checkpoint '/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/ckpt/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2/ckp_ep400.pth.tar'
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7fb15fb502b0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7fb15fb502b0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [60/60]	Time 0.011 (0.011)	Data 17.182 (17.182)	
+(5924, 16)
+100 num_clusters
+K-means done
+[0.53578663 0.65124916 0.76434841 0.85229575 0.91542876 0.95695476] 0.6007262995612881
+Epoch-400 0.5358  0.6512  0.7643  0.8523  0.9154  0.9570  0.6007
+Namespace(batch_size=100, data='cub', data_root='/gpfs/data/xl6/xuefei/ML/data', dim=512, gallery_eq_query=True, nThreads=16, net='Inception', pool_feature=False, resume='/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/ckpt/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2/ckp_ep450.pth.tar', save_txt='/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/result/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2.txt', width=227) False
+=> Loaded checkpoint '/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/ckpt/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2/ckp_ep450.pth.tar'
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7feebaa9a2b0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7feebaa9a2b0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [60/60]	Time 0.012 (0.012)	Data 18.825 (18.825)	
+(5924, 16)
+100 num_clusters
+K-means done
+[0.54118839 0.65817016 0.76789332 0.85516543 0.91897367 0.95779878] 0.5997968143721222
+Epoch-450 0.5412  0.6582  0.7679  0.8552  0.9190  0.9578  0.5998
+Namespace(batch_size=100, data='cub', data_root='/gpfs/data/xl6/xuefei/ML/data', dim=512, gallery_eq_query=True, nThreads=16, net='Inception', pool_feature=False, resume='/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/ckpt/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2/ckp_ep500.pth.tar', save_txt='/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/result/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2.txt', width=227) False
+=> Loaded checkpoint '/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/ckpt/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2/ckp_ep500.pth.tar'
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7f95ffbea240>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7f95ffbea240>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [60/60]	Time 0.011 (0.011)	Data 20.045 (20.045)	
+(5924, 16)
+100 num_clusters
+K-means done
+[0.53325456 0.65580689 0.76772451 0.85347738 0.91424713 0.95695476] 0.6078447572676242
+Epoch-500 0.5333  0.6558  0.7677  0.8535  0.9142  0.9570  0.6078
+Namespace(batch_size=100, data='cub', data_root='/gpfs/data/xl6/xuefei/ML/data', dim=512, gallery_eq_query=True, nThreads=16, net='Inception', pool_feature=False, resume='/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/ckpt/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2/ckp_ep550.pth.tar', save_txt='/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/result/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2.txt', width=227) False
+=> Loaded checkpoint '/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/ckpt/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2/ckp_ep550.pth.tar'
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7fa28af18240>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7fa28af18240>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [60/60]	Time 0.011 (0.011)	Data 20.036 (20.036)	
+(5924, 16)
+100 num_clusters
+K-means done
+[0.54692775 0.66931128 0.7741391  0.86090479 0.92201215 0.95948683] 0.6135824620163277
+Epoch-550 0.5469  0.6693  0.7741  0.8609  0.9220  0.9595  0.6136
+Namespace(batch_size=100, data='cub', data_root='/gpfs/data/xl6/xuefei/ML/data', dim=512, gallery_eq_query=True, nThreads=16, net='Inception', pool_feature=False, resume='/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/ckpt/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2/ckp_ep600.pth.tar', save_txt='/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/result/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2.txt', width=227) False
+=> Loaded checkpoint '/gpfs/data/xl6/xuefei/ML/results/Deep_Metric/ckpt/Weight/cub/Inception-DIM-512-lr-0.00001-ratio-0.16-BatchSize-80-rot_lr-0.00001-self_supervision_rot-0.1-rot_bt-1-rot_batch-16-up_step-5-num_clusters-100-ALPHA-40-BETA-2/ckp_ep600.pth.tar'
+width: 	 227
+bgr init
+train.txt is used!
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7f85ccdf62b0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    RandomResizedCrop(size=(227, 227), scale=(0.16, 1), ratio=(0.75, 1.3333), interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+transform used: Compose(
+    <data.transforms.CovertBGR object at 0x7f85ccdf62b0>
+    Resize(size=256, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(227, 227))
+    ToTensor()
+    Normalize(mean=[0.40784313725490196, 0.4588235294117647, 0.5019607843137255], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+)
+Extract Features: [60/60]	Time 0.011 (0.011)	Data 20.644 (20.644)	
+(5924, 16)
+100 num_clusters
+K-means done
+[0.54405807 0.66340311 0.77515192 0.86090479 0.91812964 0.95611074] 0.6077152698132465
+Epoch-600 0.5441  0.6634  0.7752  0.8609  0.9181  0.9561  0.6077

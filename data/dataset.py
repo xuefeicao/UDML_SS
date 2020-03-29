@@ -82,7 +82,7 @@ class MyData(data.Dataset):
         self.self_supervision_rot = self_supervision_rot
         self.rot_bt = rot_bt
         self.mode = mode
-        print('transform used:', transform)
+
         
         if label_txt is None:
             raise Exception('wrong data used!')
