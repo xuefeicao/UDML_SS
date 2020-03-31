@@ -14,7 +14,7 @@ the training process by predicting image rotations. Our method
 algorithm (e.g., k-means), and sampling training pairs based on the cluster
 assignment, while optimizing self-supervised pretext task in a multitask
 fashion. The proposed method outperforms the current state of the
-art by a signicant margin on all the standard benchmarks.
+art by a signicant margin on all the standard benchmarks.
 
 ### Dataset
 - [Car-196](http://ai.stanford.edu/~jkrause/cars/car_devkit.tgz)
